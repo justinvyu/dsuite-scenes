@@ -1,0 +1,31 @@
+<!-- Copyright 2019 The DSuite Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<mujoco model='dclaw4xh'>
+    <compiler meshdir='.'/>
+    <size njmax="500" nconmax="1000" />
+    <include file='assets/dependencies4xh.xml'/>
+    <include file='../scenes/basic_scene.xml'/>
+
+    <worldbody>
+
+        <camera name='targeting' pos='1 1 2' mode='targetbodycom' target='dClaw'/>
+
+        <body name='mount' pos='0 0 .30' euler='0 0 0'>
+            <geom type='cylinder' size='.02 .001' rgba='.2 .2 .2 1'/>
+  	        <include file='assets/chain4xh.xml'/>
+  	        <include file='assets/chain4xh_overlay.xml'/>
+	       </body>
+    </worldbody>
+</mujoco>
