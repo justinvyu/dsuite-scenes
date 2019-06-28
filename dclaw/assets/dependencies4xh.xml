@@ -1,139 +1,112 @@
-<!-- Copyright 2019 The DSuite Authors.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License. -->
-
+<?xml version="1.0"?>
+<!--
+ ~ Copyright 2019 The D'Suite Authors.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~     http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ -->
 <mujocoinclude>
-
-  	<compiler inertiafromgeom='true' angle='radian' />
-
-    <asset>
-        <mesh name="xh" file="../dclaw/meshes/xh_base_high_poly.stl" scale='.001 .001 .001'/>
-        <mesh name="metal_circle" file="../dclaw/meshes/mx_circle_high_poly.stl" scale='.001 .001 .001'/>
-        <mesh name="plastic_finger" file="../dclaw/meshes/xh_4_finger_tip.stl" scale='.001 .001 .001'/>
-        <mesh name="metal_clamping" file="../dclaw/meshes/xh_4_clamping_high_poly.stl" scale='.001 .001 .001'/>
-		<mesh name="plastic_top" file="../dclaw/meshes/mx_white_top_high_poly.stl" scale='.001 .001 .001'/>
-		<mesh name="xh_hull" file="../dclaw/meshes/xh_base_hull.stl" scale='.001 .001 .001'/>
-		<mesh name="xh_hull_top" file="../dclaw/meshes/xh_base_hull_top.stl" scale='.001 .001 .001'/>
-    </asset>
-
-    <default>
-
-    	<default class="dclaw3xh">
-
-	        <joint limited='true' damping='.1' armature='0.001'/>
-			<geom contype='1' conaffinity='1' condim='4' group='1' margin="0.0005"/>
-	        <motor ctrlrange='-1.57 1.57'  ctrllimited='true'/>
-
-			<default class="viz_metal_black">
-				<geom contype="0" conaffinity="0" group="1" type="mesh" material = "metall_black"/>
-				<site group='1'/>
-			</default>
-
-			<default class="viz_metal_grey">
-				<geom contype="0" conaffinity="0" group="1" type="mesh" material = "metall_grey"/>
-				<site group='1'/>
-			</default>
-
-			<default class="viz_plastic">
-				<geom contype="0" conaffinity="0" group="1" type="mesh" material = "plastic"/>
-				<site group='1'/>
-			</default>
-
-			<default class="overlay">
-				<geom contype="0" conaffinity="0" group="3" type="mesh" material = "greenish"/>
-	        	<joint limited='false' damping='100' frictionloss='100' armature='0'/>
-				<site group='3'/>
-			</default>
-
-			<default class="phy_metal">
-				<geom contype="1" conaffinity="1" group="4" type="mesh"  rgba="0.0 0.0 1.0 .3"/>
-				<site group='4'/>
-			</default>
-
-			<default class="phy_plastic">
-				<geom contype="1" conaffinity="1" group="4" type="mesh"  rgba="0.0 0.0 1.0 .3" friction=".2 0.005 0.0001"/>
-				<site group='4'/>
-			</default>
-
-   		</default>
+  <compiler inertiafromgeom="true" angle="radian"/>
+  <asset>
+    <mesh name="xh" file="../dclaw/meshes/xh_base_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="metal_circle" file="../dclaw/meshes/mx_circle_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="plastic_finger" file="../dclaw/meshes/xh_4_finger_tip.stl" scale=".001 .001 .001"/>
+    <mesh name="metal_clamping" file="../dclaw/meshes/xh_4_clamping_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="plastic_top" file="../dclaw/meshes/mx_white_top_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="xh_hull" file="../dclaw/meshes/xh_base_hull.stl" scale=".001 .001 .001"/>
+    <mesh name="xh_hull_top" file="../dclaw/meshes/xh_base_hull_top.stl" scale=".001 .001 .001"/>
+  </asset>
+  <default>
+    <default class="dclaw3xh">
+      <joint limited="true" damping=".1" armature="0.001"/>
+      <geom contype="1" conaffinity="1" condim="4" group="1" margin="0.0005"/>
+      <motor ctrlrange="-1.57 1.57" ctrllimited="true"/>
+      <default class="viz_metal_black">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="metall_black"/>
+        <site group="1"/>
+      </default>
+      <default class="viz_metal_grey">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="metall_grey"/>
+        <site group="1"/>
+      </default>
+      <default class="viz_plastic">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="plastic"/>
+        <site group="1"/>
+      </default>
+      <default class="overlay">
+        <geom contype="0" conaffinity="0" group="3" type="mesh" material="greenish"/>
+        <joint limited="false" damping="100" frictionloss="100" armature="0"/>
+        <site group="3"/>
+      </default>
+      <default class="phy_metal">
+        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3"/>
+        <site group="4"/>
+      </default>
+      <default class="phy_plastic">
+        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3" friction=".2 0.005 0.0001"/>
+        <site group="4"/>
+      </default>
     </default>
-
-    <option timestep='0.0025' iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic"/>
-
-    <visual>
-        <map fogstart="1.5" fogend="5" force="0.1" znear="0.1"/>
-        <quality shadowsize ="16384" offsamples="24"/>
-        <global offwidth="800" offheight="800"/>
-    </visual>
-
-    <asset>
-        <material name='metall_black' specular="1" shininess="1"   rgba="0.2 0.2 0.2 1.0" />
-		<material name='metall_grey' specular="1" shininess="1"   rgba="0.5 0.5 0.5 1.0" />
-        <material name="plastic" specular="0.3" shininess="0" rgba = "1 1 1 1"/>
-		<material name="greenish" specular="0.0" shininess="0" rgba = "0.3 1 0.3 1"/>
-    </asset>
-
-
-    <actuator>
-		<position name='FFJ0' kp='2' joint='FFJ0' class="dclaw3xh"/>
-        <position name='FFJ1' kp='2' joint='FFJ1' class="dclaw3xh"/>
-        <position name='FFJ2' kp='2' joint='FFJ2' class="dclaw3xh"/>
-        <position name='FFJ3' kp='2' joint='FFJ3' class="dclaw3xh"/>
-
-  		<position name='MFJ0' kp='2' joint='MFJ0' class="dclaw3xh"/>
-        <position name='MFJ1' kp='2' joint='MFJ1' class="dclaw3xh"/>
-        <position name='MFJ2' kp='2' joint='MFJ2' class="dclaw3xh"/>
-        <position name='MFJ3' kp='2' joint='MFJ3' class="dclaw3xh"/>
-
-  		<position name='THJ0' kp='2' joint='THJ0' class="dclaw3xh"/>
-        <position name='THJ1' kp='2' joint='THJ1' class="dclaw3xh"/>
-        <position name='THJ2' kp='2' joint='THJ2' class="dclaw3xh"/>
-        <position name='THJ3' kp='2' joint='THJ3' class="dclaw3xh"/>
-    </actuator>
-
-
-
-	<sensor>
-		<jointpos   name="FFJ0_pos_sensor" joint="FFJ0" />
-		<jointpos   name="FFJ1_pos_sensor" joint="FFJ1" />
-		<jointpos   name="FFJ2_pos_sensor" joint="FFJ2" />
-		<jointpos   name="FFJ3_pos_sensor" joint="FFJ3" />
-
-		<jointpos   name="MFJ0_pos_sensor" joint="MFJ0" />
-		<jointpos   name="MFJ1_pos_sensor" joint="MFJ1" />
-		<jointpos   name="MFJ2_pos_sensor" joint="MFJ2" />
-		<jointpos   name="MFJ3_pos_sensor" joint="MFJ3" />
-
-		<jointpos   name="THJ0_pos_sensor" joint="THJ0" />
-		<jointpos   name="THJ1_pos_sensor" joint="THJ1" />
-		<jointpos   name="THJ2_pos_sensor" joint="THJ2" />
-		<jointpos   name="THJ3_pos_sensor" joint="THJ3" />
-
-		<jointvel   name="FFJ0_velocity_sensor" joint="FFJ0" />
-		<jointvel   name="FFJ1_velocity_sensor" joint="FFJ1" />
-		<jointvel   name="FFJ2_velocity_sensor" joint="FFJ2" />
-		<jointvel   name="FFJ3_velocity_sensor" joint="FFJ3" />
-
-		<jointvel   name="MFJ0_velocity_sensor" joint="MFJ0" />
-		<jointvel   name="MFJ1_velocity_sensor" joint="MFJ1" />
-		<jointvel   name="MFJ2_velocity_sensor" joint="MFJ2" />
-		<jointvel   name="MFJ3_velocity_sensor" joint="MFJ3" />
-
-		<jointvel   name="THJ0_velocity_sensor" joint="THJ0" />
-		<jointvel   name="THJ1_velocity_sensor" joint="THJ1" />
-		<jointvel   name="THJ2_velocity_sensor" joint="THJ2" />
-  		<jointvel   name="THJ3_velocity_sensor" joint="THJ3" />
-	</sensor>
-
-
+  </default>
+  <option timestep="0.0025" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic"/>
+  <visual>
+    <map fogstart="1.5" fogend="5" force="0.1" znear="0.1"/>
+    <quality shadowsize="16384" offsamples="24"/>
+    <global offwidth="800" offheight="800"/>
+  </visual>
+  <asset>
+    <material name="metall_black" specular="1" shininess="1" rgba="0.2 0.2 0.2 1.0"/>
+    <material name="metall_grey" specular="1" shininess="1" rgba="0.5 0.5 0.5 1.0"/>
+    <material name="plastic" specular="0.3" shininess="0" rgba="1 1 1 1"/>
+    <material name="greenish" specular="0.0" shininess="0" rgba="0.3 1 0.3 1"/>
+  </asset>
+  <actuator>
+    <position name="FFJ0" kp="2" joint="FFJ0" class="dclaw3xh"/>
+    <position name="FFJ1" kp="2" joint="FFJ1" class="dclaw3xh"/>
+    <position name="FFJ2" kp="2" joint="FFJ2" class="dclaw3xh"/>
+    <position name="FFJ3" kp="2" joint="FFJ3" class="dclaw3xh"/>
+    <position name="MFJ0" kp="2" joint="MFJ0" class="dclaw3xh"/>
+    <position name="MFJ1" kp="2" joint="MFJ1" class="dclaw3xh"/>
+    <position name="MFJ2" kp="2" joint="MFJ2" class="dclaw3xh"/>
+    <position name="MFJ3" kp="2" joint="MFJ3" class="dclaw3xh"/>
+    <position name="THJ0" kp="2" joint="THJ0" class="dclaw3xh"/>
+    <position name="THJ1" kp="2" joint="THJ1" class="dclaw3xh"/>
+    <position name="THJ2" kp="2" joint="THJ2" class="dclaw3xh"/>
+    <position name="THJ3" kp="2" joint="THJ3" class="dclaw3xh"/>
+  </actuator>
+  <sensor>
+    <jointpos name="FFJ0_pos_sensor" joint="FFJ0"/>
+    <jointpos name="FFJ1_pos_sensor" joint="FFJ1"/>
+    <jointpos name="FFJ2_pos_sensor" joint="FFJ2"/>
+    <jointpos name="FFJ3_pos_sensor" joint="FFJ3"/>
+    <jointpos name="MFJ0_pos_sensor" joint="MFJ0"/>
+    <jointpos name="MFJ1_pos_sensor" joint="MFJ1"/>
+    <jointpos name="MFJ2_pos_sensor" joint="MFJ2"/>
+    <jointpos name="MFJ3_pos_sensor" joint="MFJ3"/>
+    <jointpos name="THJ0_pos_sensor" joint="THJ0"/>
+    <jointpos name="THJ1_pos_sensor" joint="THJ1"/>
+    <jointpos name="THJ2_pos_sensor" joint="THJ2"/>
+    <jointpos name="THJ3_pos_sensor" joint="THJ3"/>
+    <jointvel name="FFJ0_velocity_sensor" joint="FFJ0"/>
+    <jointvel name="FFJ1_velocity_sensor" joint="FFJ1"/>
+    <jointvel name="FFJ2_velocity_sensor" joint="FFJ2"/>
+    <jointvel name="FFJ3_velocity_sensor" joint="FFJ3"/>
+    <jointvel name="MFJ0_velocity_sensor" joint="MFJ0"/>
+    <jointvel name="MFJ1_velocity_sensor" joint="MFJ1"/>
+    <jointvel name="MFJ2_velocity_sensor" joint="MFJ2"/>
+    <jointvel name="MFJ3_velocity_sensor" joint="MFJ3"/>
+    <jointvel name="THJ0_velocity_sensor" joint="THJ0"/>
+    <jointvel name="THJ1_velocity_sensor" joint="THJ1"/>
+    <jointvel name="THJ2_velocity_sensor" joint="THJ2"/>
+    <jointvel name="THJ3_velocity_sensor" joint="THJ3"/>
+  </sensor>
 </mujocoinclude>
