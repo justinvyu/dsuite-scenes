@@ -24,7 +24,8 @@
     <material name="MatPlane" reflectance="0.05" texture="texplane" texrepeat="4 4" texuniform="true"/>
   </asset>
   <visual>
-    <quality shadowsize="4048"/>
+    <map fogstart="1.5" fogend="5" force="0.1" znear="0.1"/>
+    <quality shadowsize="4096" offsamples="4"/>
   </visual>
   <worldbody>
     <light directional="true" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="-1 -1 1" dir="1 1 -1"/>
