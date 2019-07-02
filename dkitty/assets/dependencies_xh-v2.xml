@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+ ~ Copyright 2019 The D'Suite Authors.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~     http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ -->
+<mujocoinclude>
+  <compiler inertiafromgeom="true" angle="radian" inertiagrouprange="4 4" settotalmass="1.8"/>
+  <size njmax="400" nconmax="400"/>
+  <option timestep="0.0025" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic"/>
+  <asset>
+    <mesh name="xh28" file="../dclaw/meshes/xh_base_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="plastic_finger" file="../dclaw/meshes/xh_finger_tip.stl" scale=".001 .001 .001"/>
+    <mesh name="metal_clamping" file="../dclaw/meshes/fr12-h103.stl" scale=".001 .001 .001"/>
+    <mesh name="metal_clamping_small" file="../dclaw/meshes/xh_clamping_small_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="plastic_top" file="../dclaw/meshes/xh_white_top_high_poly.stl" scale=".001 .001 .001"/>
+    <mesh name="xh28_hull" file="../dclaw/meshes/xh_base_hull.stl" scale=".001 .001 .001"/>
+    <mesh name="xh28_hull_top" file="../dclaw/meshes/xh_base_hull_top.stl" scale=".001 .001 .001"/>
+    <mesh name="torso" file="../dkitty/meshes/torso.stl" scale="1 1 1"/>
+  </asset>
+  <default>
+    <default class="dkitty">
+      <joint limited="true" damping="1" armature="0.001"/>
+      <geom contype="1" conaffinity="1" condim="4" group="1" margin="0.001" solref=".02 1" solimp=".8 .9 .01"/>
+      <position ctrlrange="-1.57 1.57" ctrllimited="true" kp="5"/>
+      <default class="viz_metal_black">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="metall_black"/>
+        <site group="1"/>
+      </default>
+      <default class="viz_metal_grey">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="metall_grey"/>
+        <site group="1"/>
+      </default>
+      <default class="viz_plastic">
+        <geom contype="0" conaffinity="0" group="1" type="mesh" material="plastic"/>
+        <site group="1"/>
+      </default>
+      <default class="overlay">
+        <geom contype="0" conaffinity="0" group="3" type="mesh" material="greenish"/>
+        <joint limited="false" damping="100" frictionloss="100" armature="0"/>
+        <site group="3"/>
+      </default>
+      <default class="phy_metal">
+        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3"/>
+        <site group="4"/>
+      </default>
+      <default class="phy_plastic">
+        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3"/>
+        <site group="4"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="metall_black" specular="1" shininess="1" rgba="0.25 0.25 0.25 1.0"/>
+    <material name="metall_grey" specular="1" shininess="1" rgba="0.5 0.5 0.5 1.0"/>
+    <material name="plastic" specular="0.3" shininess="0" rgba="1 1 1 1"/>
+    <material name="greenish" specular="0.0" shininess="0" rgba="0.3 1 0.3 1"/>
+  </asset>
+  <actuator>
+    <position name="FRJ0" joint="FRJ0" class="dkitty" ctrlrange="-.50 .35"/>
+    <position name="FRJ1" joint="FRJ1" class="dkitty" ctrlrange="0 1.57"/>
+    <position name="FRJ2" joint="FRJ2" class="dkitty" ctrlrange="-2.14 0"/>
+    <position name="BRJ0" joint="BRJ0" class="dkitty" ctrlrange="-.50 .35"/>
+    <position name="BRJ1" joint="BRJ1" class="dkitty" ctrlrange="0 1.57"/>
+    <position name="BRJ2" joint="BRJ2" class="dkitty" ctrlrange="-2.14 0"/>
+    <position name="FLJ0" joint="FLJ0" class="dkitty" ctrlrange="-.50 .35"/>
+    <position name="FLJ1" joint="FLJ1" class="dkitty" ctrlrange="0 1.57"/>
+    <position name="FLJ2" joint="FLJ2" class="dkitty" ctrlrange="-2.14 0"/>
+    <position name="BLJ0" joint="BLJ0" class="dkitty" ctrlrange="-.50 .35"/>
+    <position name="BLJ1" joint="BLJ1" class="dkitty" ctrlrange="0 1.57"/>
+    <position name="BLJ2" joint="BLJ2" class="dkitty" ctrlrange="-2.14 0"/>
+  </actuator>
+  <sensor>
+    <jointpos name="FRJ0_pos_sensor" joint="FRJ0"/>
+    <jointpos name="FRJ1_pos_sensor" joint="FRJ1"/>
+    <jointpos name="FRJ2_pos_sensor" joint="FRJ2"/>
+    <jointpos name="BRJ0_pos_sensor" joint="BRJ0"/>
+    <jointpos name="BRJ1_pos_sensor" joint="BRJ1"/>
+    <jointpos name="BRJ2_pos_sensor" joint="BRJ2"/>
+    <jointpos name="FLJ0_pos_sensor" joint="FLJ0"/>
+    <jointpos name="FLJ1_pos_sensor" joint="FLJ1"/>
+    <jointpos name="FLJ2_pos_sensor" joint="FLJ2"/>
+    <jointvel name="FRJ0_velocity_sensor" joint="FRJ0"/>
+    <jointvel name="FRJ1_velocity_sensor" joint="FRJ1"/>
+    <jointvel name="FRJ2_velocity_sensor" joint="FRJ2"/>
+    <jointvel name="BRJ0_velocity_sensor" joint="BRJ0"/>
+    <jointvel name="BRJ1_velocity_sensor" joint="BRJ1"/>
+    <jointvel name="BRJ2_velocity_sensor" joint="BRJ2"/>
+    <jointvel name="FLJ0_velocity_sensor" joint="FLJ0"/>
+    <jointvel name="FLJ1_velocity_sensor" joint="FLJ1"/>
+    <jointvel name="FLJ2_velocity_sensor" joint="FLJ2"/>
+  </sensor>
+</mujocoinclude>
