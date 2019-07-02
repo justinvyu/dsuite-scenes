@@ -15,7 +15,7 @@
  ~ limitations under the License.
  -->
 <mujocoinclude>
-  <body name="dClaw" pos="0 0 .0" euler="3.14 0 0.523599" childclass="dclaw3xh">
+  <body name="dClaw" pos="0 0 .0" euler="3.14 0 -0.628319" childclass="dclaw3xh">
     <camera name="tracking" pos="1 1 2" zaxis="1 2 3" mode="trackcom"/>
     <geom class="viz_metal_grey" mesh="metal_circle"/>
     <geom class="phy_metal" type="cylinder" pos="0.00 0  0.005" size="0.075 0.0065"/>
