@@ -1,223 +1,151 @@
 <?xml version="1.0"?>
 <!--
- ~ Copyright 2019 The D'Suite Authors.
- ~
- ~ Licensed under the Apache License, Version 2.0 (the "License");
- ~ you may not use this file except in compliance with the License.
- ~ You may obtain a copy of the License at
- ~
- ~     http://www.apache.org/licenses/LICENSE-2.0
- ~
- ~ Unless required by applicable law or agreed to in writing, software
- ~ distributed under the License is distributed on an "AS IS" BASIS,
- ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- ~ See the License for the specific language governing permissions and
- ~ limitations under the License.
- -->
+~ Copyright 2019 The D'Suite Authors.
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~     http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License.
+-->
 <mujocoinclude>
-  <body name="dClaw" pos="0 0 .0" euler="3.14 0 -0.628319" childclass="dclaw3xh">
-    <camera name="tracking" pos="1 1 2" zaxis="1 2 3" mode="trackcom"/>
-    <geom class="viz_metal_grey" mesh="metal_circle"/>
-    <geom class="phy_metal" type="cylinder" pos="0.00 0  0.005" size="0.075 0.0065"/>
-    <site name="S_grasp" pos="0 0 0.24" type="sphere" size="0.01" group="4"/>
-    <body name="FFbase" pos="-0.000 -0.062 .010">
-      <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <geom class="phy_metal" mesh="xh28_hull_top" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <body name="FF0" pos="0 0 0.01425" euler="0 0 3.14">
-        <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0" euler="0 0 1.57"/>
-        <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.055" euler="3.14 0 0"/>
-        <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" type="box" pos="0.0 0  0.028" size="0.018 0.014 0.001"/>
-        <geom class="phy_metal" type="box" pos="0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <geom class="phy_metal" type="box" pos="-0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <joint name="FFJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
-        <body name="FFL1" pos="0 0 0.0665">
-          <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.0555" euler="3.14 0 0"/>
-          <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" type="box" pos="0.0 0  0.0265" size="0.018 0.014 0.004"/>
-          <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-          <geom class="phy_metal" type="box" pos="0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="-0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <geom class="phy_metal" type="box" pos="-0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <joint name="FFJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-          <body name="FFL2" pos="0 0 0.068">
-            <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-            <geom class="phy_metal" type="box" pos="0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="phy_metal" type="box" pos="-0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="viz_plastic" mesh="plastic_finger" pos="0 0 0.046"/>
-            <geom class="phy_plastic" type="capsule" pos="0 0 0.056" size="0.01 0.02"/>
-            <geom class="phy_plastic" type="box" pos="0 0 0.028" size="0.0245 0.014 0.0055"/>
-            <joint name="FFJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-            <site name="FFtip" type="sphere" pos="0 0 .076" size="0.01" rgba="1 .3 .3 1"/>
-          </body>
+<body name='dClaw' pos='0 0 .0' euler='3.14 0 0.523599' childclass='dclaw3xh'>
+
+  <geom class='viz_metal_grey' mesh="metal_circle" />
+  <geom class='phy_metal' type = "cylinder"  pos='0.00 0  0.005'  size = "0.075 0.0065" />
+  <site name='S_grasp' pos='0 0 0.24' type='sphere' size='0.01' group='4'/>
+
+
+
+  <body name='FFbase' pos='-0.000 -0.062 .010'>
+    <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.01425' euler='1.57 0 1.57'/>
+    <geom class='phy_metal' mesh="xh28_hull_top" pos='0 0 0.01425' euler='1.57 0 1.57' />
+
+    <body name='FF0' pos='0 0 0.01425' euler='0 0 3.14'>
+      <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0' euler='0 0 1.57'/>
+      <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.055'  euler='3.14 0 0' />
+      <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.067' euler='1.57 1.57 0' />
+      <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.067' euler='1.57 1.57 0' />
+
+      <geom class='phy_metal' type = "box"  pos='0.0 0  0.028'  size = "0.018 0.014 0.001" />
+      <geom class='phy_metal' type = "box" pos='0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+      <geom class='phy_metal' type = "box" pos='-0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+
+      <joint name = "FFJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
+
+      <body name='FFL1' pos='0 0 0.0665' >
+        <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.0555'  euler='3.14 0 0' />
+        <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.068' euler='1.57 1.57 0'  />
+        <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.068' euler='1.57 1.57 0' />
+        <geom class='phy_metal' type = "box"  pos='0.0 0  0.0265'  size = "0.018 0.014 0.004" />
+        <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+        <geom class='phy_metal' type = "box" pos='0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='-0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <geom class='phy_metal' type = "box" pos='-0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <joint name = "FFJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+
+        <body name='FFL2' pos='0 0 0.068' >
+          <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+          <geom class='phy_metal' type = "box" pos='0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='phy_metal' type = "box" pos='-0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='viz_plastic' mesh="plastic_finger" pos='0 0 0.046'  />
+          <geom class='phy_plastic' type = "capsule"  pos='0 0 0.056'  size = "0.01 0.02" />
+          <geom class='phy_plastic' type = "box"  pos='0 0 0.028'  size = "0.0245 0.014 0.0055" />
+          <joint name = "FFJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+          <site name='FFtip' type='sphere' pos='0 0 .076' size='0.01' rgba='1 .3 .3 1' />
         </body>
       </body>
     </body>
-    <body name="MFbase" pos=".0537 0.031 .010" euler="0 0 2.0944">
-      <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <geom class="phy_metal" mesh="xh28_hull_top" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <body name="MF0" pos="0 0 0.01425" euler="0 0 3.14">
-        <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0" euler="0 0 1.57"/>
-        <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.055" euler="3.14 0 0"/>
-        <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" type="box" pos="0.0 0  0.028" size="0.018 0.014 0.001"/>
-        <geom class="phy_metal" type="box" pos="0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <geom class="phy_metal" type="box" pos="-0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <joint name="MFJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
-        <body name="MFL1" pos="0 0 0.0665">
-          <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.0555" euler="3.14 0 0"/>
-          <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" type="box" pos="0.0 0  0.0265" size="0.018 0.014 0.004"/>
-          <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-          <geom class="phy_metal" type="box" pos="0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="-0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <geom class="phy_metal" type="box" pos="-0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <joint name="MFJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-          <body name="MFL2" pos="0 0 0.068">
-            <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-            <geom class="phy_metal" type="box" pos="0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="phy_metal" type="box" pos="-0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="viz_plastic" mesh="plastic_finger" pos="0 0 0.046"/>
-            <geom class="phy_plastic" type="capsule" pos="0 0 0.056" size="0.01 0.02"/>
-            <geom class="phy_plastic" type="box" pos="0 0 0.028" size="0.0245 0.014 0.0055"/>
-            <joint name="MFJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-            <site name="MFtip" type="sphere" pos="0 0 .076" size="0.01" rgba=".3 1 .3 1"/>
-          </body>
-        </body>
-      </body>
-    </body>
-    <!-- <body name='MFtop' pos='.044 0.025  -.016' euler='0 0 2.0944'>
-        <geom class='viz_plastic' mesh="plastic_top" pos='0 0 0' />
-        <geom class='phy_plastic' type = "box"  pos='0.00 0.0  0'  size = "0.018 0.024  0.0035" />
-
-            <body name='MFbase' pos='0 -0.01 0.058' euler='0 0 3.14'>
-                <geom class='viz_metal_black' mesh="xh28" pos='0 0 0' euler='1.57 0 1.57' />
-                <geom class='phy_metal' mesh="xh28_hull_top" pos='0 0 0' euler='1.57 0 1.57' />
-
-                <body name='MF0' pos='0 0 0.058' >
-                    <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 -0.058' euler='0 0 1.57'/>
-                    <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 -0.003'  euler='3.14 0 0' />
-                    <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.009' euler='1.57 1.57 0' />
-                    <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.009' euler='1.57 1.57 0' />
-
-                      <geom class='phy_metal' type = "box"  pos='0.0 0  -0.030'  size = "0.018 0.014 0.001" />
-                      <geom class='phy_metal' type = "box" pos='0.019 0 -0.025'  size = "0.0008 0.014 0.006" />
-                      <geom class='phy_metal' type = "box" pos='-0.019 0 -0.025'  size = "0.0008 0.014 0.006" />
-
-                      <joint name = "MFJ0" type="hinge" pos="0 0 -0.058" axis="0 1 0" limited="false" />
-
-                      <body name='MFL1' pos='0 0 0.0085' >
-                          <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.0555'  euler='3.14 0 0' />
-                          <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.068' euler='1.57 1.57 0'  />
-                          <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.068' euler='1.57 1.57 0' />
-                          <geom class='phy_metal' type = "box"  pos='0.0 0  0.0265'  size = "0.018 0.014 0.004" />
-                          <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
-                          <geom class='phy_metal' type = "box" pos='0.02 0 0.013'  size = "0.0015 0.012 0.016" />
-                          <geom class='phy_metal' type = "box" pos='-0.02 0 0.013'  size = "0.0015 0.012 0.016" />
-                          <geom class='phy_metal' type = "box" pos='0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
-                          <geom class='phy_metal' type = "box" pos='-0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
-                          <joint name = "MFJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
-
-                          <body name='MFL2' pos='0 0 0.068' >
-                              <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
-                              <geom class='phy_metal' type = "box" pos='0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
-                              <geom class='phy_metal' type = "box" pos='-0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
-                              <geom class='viz_plastic' mesh="plastic_finger" pos='0 0 0.046'  />
-                              <geom class='phy_plastic' type = "capsule"  pos='0 0 0.056'  size = "0.01 0.02" />
-                              <geom class='phy_plastic' type = "box"  pos='0 0 0.028'  size = "0.0245 0.014 0.0055" />
-                              <joint name = "MFJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
-                              <site name='MFtip' type='sphere' pos='0 0 .076' size='0.01'  rgba='.3 1 .3 1' />
-                          </body>
-                      </body>
-                 </body>
-            </body>
-        </body> -->
-    <body name="THbase" pos="-.0537 0.031 .010" euler="0 0 -2.0944">
-      <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <geom class="phy_metal" mesh="xh28_hull_top" pos="0 0 0.01425" euler="1.57 0 1.57"/>
-      <body name="TH0" pos="0 0 0.01425" euler="0 0 3.14">
-        <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0" euler="0 0 1.57"/>
-        <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.055" euler="3.14 0 0"/>
-        <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.067" euler="1.57 1.57 0"/>
-        <geom class="phy_metal" type="box" pos="0.0 0  0.028" size="0.018 0.014 0.001"/>
-        <geom class="phy_metal" type="box" pos="0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <geom class="phy_metal" type="box" pos="-0.019 0 0.033" size="0.0008 0.014 0.006"/>
-        <joint name="THJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
-        <body name="THL1" pos="0 0 0.0665">
-          <geom class="viz_metal_black" mesh="metal_clamping_small" pos="0 0 0.0555" euler="3.14 0 0"/>
-          <geom class="viz_metal_black" mesh="xh28" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" mesh="xh28_hull" pos="0 0 0.068" euler="1.57 1.57 0"/>
-          <geom class="phy_metal" type="box" pos="0.0 0  0.0265" size="0.018 0.014 0.004"/>
-          <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-          <geom class="phy_metal" type="box" pos="0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="-0.02 0 0.013" size="0.0015 0.012 0.016"/>
-          <geom class="phy_metal" type="box" pos="0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <geom class="phy_metal" type="box" pos="-0.019 0 0.035" size="0.0008 0.014 0.0055"/>
-          <joint name="THJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-          <body name="THL2" pos="0 0 0.068">
-            <geom class="viz_metal_black" mesh="metal_clamping" pos="0 0 0"/>
-            <geom class="phy_metal" type="box" pos="0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="phy_metal" type="box" pos="-0.02 0 0.0095" size="0.0015 0.012 0.013"/>
-            <geom class="viz_plastic" mesh="plastic_finger" pos="0 0 0.046"/>
-            <geom class="phy_plastic" type="capsule" pos="0 0 0.056" size="0.01 0.02"/>
-            <geom class="phy_plastic" type="box" pos="0 0 0.028" size="0.0245 0.014 0.0055"/>
-            <joint name="THJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14"/>
-            <site name="THtip" type="sphere" pos="0 0 .076" size="0.01" rgba=".3 .3 1 1"/>
-          </body>
-        </body>
-      </body>
-    </body>
-    <!-- <body name='TFtop'   pos='-.044 0.025  0.016' euler='0 0 -2.0944'  >
-            <geom class='viz_plastic' mesh="plastic_top" pos='0 0 0' />
-            <geom class='phy_plastic' type = "box"  pos='0.00 0.0  0'  size = "0.018 0.024  0.0035" />
-
-            <body name='THbase' pos='0 -0.01 0.020' euler='0 0 3.14'>
-                   <geom class='viz_metal_black' mesh="xh28" pos='0 0 0' />
-                   <geom class='phy_metal' mesh="xh28_hull_top" pos='0 0 0' />
-
-                 <body name='TH0' pos='0 0 0.058' >
-                      <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 -0.012'  euler='3.14 0 0' />
-                      <geom class='viz_metal_black' mesh="xh28" pos='0 0 0' euler='1.57 1.57 0' />
-                      <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0' euler='1.57 1.57 0' />
-
-                      <geom class='phy_metal' type = "box"  pos='0.0 0  -0.039'  size = "0.018 0.014 0.001" />
-                      <geom class='phy_metal' type = "box" pos='0.019 0 -0.034'  size = "0.0008 0.014 0.006" />
-                      <geom class='phy_metal' type = "box" pos='-0.019 0 -0.034'  size = "0.0008 0.014 0.006" />
-
-                      <joint name = "THJ0" type="hinge" pos="0 0 0" axis="0 0 1" limited="false" />
-
-                      <body name='THL1' pos='0 0 0' >
-                          <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.0555'  euler='3.14 0 0' />
-                          <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.068' euler='1.57 1.57 0'  />
-                          <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.068' euler='1.57 1.57 0' />
-                          <geom class='phy_metal' type = "box"  pos='0.0 0  0.0265'  size = "0.018 0.014 0.004" />
-                          <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
-                          <geom class='phy_metal' type = "box" pos='0.02 0 0.013'  size = "0.0015 0.012 0.016" />
-                          <geom class='phy_metal' type = "box" pos='-0.02 0 0.013'  size = "0.0015 0.012 0.016" />
-                          <geom class='phy_metal' type = "box" pos='0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
-                          <geom class='phy_metal' type = "box" pos='-0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
-                          <joint name = "THJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
-
-                          <body name='THL2' pos='0 0 0.068' >
-                              <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
-                              <geom class='phy_metal' type = "box" pos='0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
-                              <geom class='phy_metal' type = "box" pos='-0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
-                              <geom class='viz_plastic' mesh="plastic_finger" pos='0 0 0.046'  />
-                              <geom class='phy_plastic' type = "capsule"  pos='0 0 0.056'  size = "0.01 0.02" />
-                              <geom class='phy_plastic' type = "box"  pos='0 0 0.028'  size = "0.0245 0.014 0.0055" />
-                              <joint name = "THJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
-                              <site name = 'THtip' type='sphere' pos='0 0 .076' size='0.01' rgba='.3 .3 1 1' />
-                          </body>
-                      </body>
-                 </body>
-            </body>
-        </body> -->
   </body>
+
+  <body name='MFbase' pos='.0537 0.031 .010' euler='0 0 2.0944'>
+    <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.01425' euler='1.57 0 1.57'/>
+    <geom class='phy_metal' mesh="xh28_hull_top" pos='0 0 0.01425' euler='1.57 0 1.57' />
+
+    <body name='MF0' pos='0 0 0.01425' euler='0 0 3.14'>
+      <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0' euler='0 0 1.57'/>
+      <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.055'  euler='3.14 0 0' />
+      <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.067' euler='1.57 1.57 0' />
+      <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.067' euler='1.57 1.57 0' />
+
+      <geom class='phy_metal' type = "box"  pos='0.0 0  0.028'  size = "0.018 0.014 0.001" />
+      <geom class='phy_metal' type = "box" pos='0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+      <geom class='phy_metal' type = "box" pos='-0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+
+      <joint name = "MFJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
+
+      <body name='MFL1' pos='0 0 0.0665' >
+        <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.0555'  euler='3.14 0 0' />
+        <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.068' euler='1.57 1.57 0'  />
+        <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.068' euler='1.57 1.57 0' />
+        <geom class='phy_metal' type = "box"  pos='0.0 0  0.0265'  size = "0.018 0.014 0.004" />
+        <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+        <geom class='phy_metal' type = "box" pos='0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='-0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <geom class='phy_metal' type = "box" pos='-0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <joint name = "MFJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+
+        <body name='MFL2' pos='0 0 0.068' >
+          <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+          <geom class='phy_metal' type = "box" pos='0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='phy_metal' type = "box" pos='-0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='viz_plastic' mesh="plastic_finger" pos='0 0 0.046'  />
+          <geom class='phy_plastic' type = "capsule"  pos='0 0 0.056'  size = "0.01 0.02" />
+          <geom class='phy_plastic' type = "box"  pos='0 0 0.028'  size = "0.0245 0.014 0.0055" />
+          <joint name = "MFJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+          <site name='MFtip' type='sphere' pos='0 0 .076' size='0.01' rgba='.3 1 .3 1' />
+        </body>
+      </body>
+    </body>
+  </body>
+  <body name='THbase' pos='-.0537 0.031 .010' euler='0 0 -2.0944'>
+    <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.01425' euler='1.57 0 1.57'/>
+    <geom class='phy_metal' mesh="xh28_hull_top" pos='0 0 0.01425' euler='1.57 0 1.57' />
+
+    <body name='TH0' pos='0 0 0.01425' euler='0 0 3.14'>
+      <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0' euler='0 0 1.57'/>
+      <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.055'  euler='3.14 0 0' />
+      <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.067' euler='1.57 1.57 0' />
+      <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.067' euler='1.57 1.57 0' />
+
+      <geom class='phy_metal' type = "box"  pos='0.0 0  0.028'  size = "0.018 0.014 0.001" />
+      <geom class='phy_metal' type = "box" pos='0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+      <geom class='phy_metal' type = "box" pos='-0.019 0 0.033'  size = "0.0008 0.014 0.006" />
+
+      <joint name = "THJ0" type="hinge" pos="0 0 0" axis="0 1 0" limited="false"/>
+
+      <body name='THL1' pos='0 0 0.0665' >
+        <geom class='viz_metal_black' mesh="metal_clamping_small" pos='0 0 0.0555'  euler='3.14 0 0' />
+        <geom class='viz_metal_black' mesh="xh28" pos='0 0 0.068' euler='1.57 1.57 0'  />
+        <geom class='phy_metal' mesh="xh28_hull" pos='0 0 0.068' euler='1.57 1.57 0' />
+        <geom class='phy_metal' type = "box"  pos='0.0 0  0.0265'  size = "0.018 0.014 0.004" />
+        <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+        <geom class='phy_metal' type = "box" pos='0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='-0.02 0 0.013'  size = "0.0015 0.012 0.016" />
+        <geom class='phy_metal' type = "box" pos='0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <geom class='phy_metal' type = "box" pos='-0.019 0 0.035'  size = "0.0008 0.014 0.0055" />
+        <joint name = "THJ1" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+
+        <body name='THL2' pos='0 0 0.068' >
+          <geom class='viz_metal_black' mesh="metal_clamping" pos='0 0 0'  />
+          <geom class='phy_metal' type = "box" pos='0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='phy_metal' type = "box" pos='-0.02 0 0.0095'  size = "0.0015 0.012 0.013" />
+          <geom class='viz_plastic' mesh="plastic_finger" pos='0 0 0.046'  />
+          <geom class='phy_plastic' type = "capsule"  pos='0 0 0.056'  size = "0.01 0.02" />
+          <geom class='phy_plastic' type = "box"  pos='0 0 0.028'  size = "0.0245 0.014 0.0055" />
+          <joint name = "THJ2" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-2.14 2.14" />
+          <site name='THtip' type='sphere' pos='0 0 .076' size='0.01' rgba='.3 .3 1 1' />
+        </body>
+      </body>
+    </body>
+  </body>
+</body>
 </mujocoinclude>
