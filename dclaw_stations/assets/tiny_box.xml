@@ -1,0 +1,23 @@
+<!-- Copyright 2019 The DSuite Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<mujocoinclude name='tiny_box' >
+  <body name="tiny_box" pos="0 0 0" >
+    <geom type="box" size="0.105 0.003175 0.04" pos="0 0.1018 0" material="light-wood" conaffinity='1' contype='1'/>
+    <geom type="box" size="0.003175 0.105 0.04" pos="0.1018 0 0" material="light-wood" conaffinity='1' contype='1'/>
+    <geom type="box" size="0.003175 0.105 0.04" pos="-0.1018 0 0" material="light-wood" conaffinity='1' contype='1'/>
+    <geom type="box" size="0.105 0.003175 0.04" pos="0 -0.1018 0" material="light-wood" conaffinity='1' contype='1'/>
+    <geom type="box" size="0.105 0.105 0.01" pos = "0 0 0" material="light-wood" friction='0.1 0.008 0.0001' conaffinity='2' contype='2'/>
+  </body>
+</mujocoinclude>
