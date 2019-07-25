@@ -30,19 +30,21 @@ limitations under the License. -->
     <mesh name="dodecahedron_bottom_left_violet" vertex="-1.618 0 -0.618  -1 1 -1  -1 -1 -1  0 -0.618 -1.618  0 0.618 -1.618  0 0 0" scale="0.03 0.03 0.03"/>
   </asset>
   <worldbody>
-    <body name='object' pos='0 0 0.059'>
-      <geom type="mesh" mesh="dodecahedron_top_left_face_blue" rgba="0 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_top_right_face_yellow" rgba="1 1 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_top_front_face_red" rgba="1 0 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_top_back_face_green" rgba="0 1 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_middle_quad_1_magenta" rgba="1 0 0.5 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_middle_quad_2_orange" rgba="1 0.5 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_middle_quad_3_purple" rgba="1 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_middle_quad_4_white" rgba="0.9 0.9 0.9 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_bottom_front_bgreen" rgba="0 1 0.5 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_bottom_back_black" rgba="0.2 0.2 0.2 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_bottom_right_babyblue" rgba="0 0.5 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="dodecahedron_bottom_left_violet" rgba="0.5 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+    <body name='object'>
+      <body name='dodecahedron' pos='0 0 0.051' euler='1.017 0 0'>
+        <geom type="mesh" mesh="dodecahedron_top_left_face_blue" rgba="0 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_top_right_face_yellow" rgba="1 1 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_top_front_face_red" rgba="1 0 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_top_back_face_green" rgba="0 1 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_middle_quad_1_magenta" rgba="1 0 0.5 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_middle_quad_2_orange" rgba="1 0.5 0 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_middle_quad_3_purple" rgba="1 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_middle_quad_4_white" rgba="0.9 0.9 0.9 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_bottom_front_bgreen" rgba="0 1 0.5 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_bottom_back_black" rgba="0.2 0.2 0.2 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_bottom_right_babyblue" rgba="0 0.5 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+        <geom type="mesh" mesh="dodecahedron_bottom_left_violet" rgba="0.5 0 1 1" solref='0.02 0.01' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+      </body>
       <joint name="OBJSx" pos="0 0 0" type="slide" axis="1 0 0" limited='false'/>
       <joint name="OBJSy" pos="0 0 0" type="slide" axis="0 1 0" limited='false'/>
       <joint name="OBJSz" pos="0 0 0" type="slide" axis="0 0 1" limited='false'/>
