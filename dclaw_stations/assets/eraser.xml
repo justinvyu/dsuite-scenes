@@ -20,16 +20,20 @@ limitations under the License. -->
     <mesh name="eraser_bottom_half" vertex="-2.25 -1 -.5  -1.75 -1 0  1.75 -1 0  1.25 -1 -0.5  -2.25 1 -0.5  -1.75 1 0  1.75 1 0  1.25 1 -0.5" scale="0.035 0.035 0.035"/>
   </asset>
   <worldbody>
-    <body name='object' pos='0 0 0.027'>
-      <!-- <geom type="mesh" mesh="eraser" rgba="1 0.6 0.6 1" solref='0.001 0.0001' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/> -->
-      <geom type="mesh" mesh="eraser_top_half" rgba="1 0.6 0.6 1" solref='0.001 0.0001' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <geom type="mesh" mesh="eraser_bottom_half" rgba="1 0.5 0.8 1" solref='0.001 0.0001' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
-      <joint name="OBJSx" pos="0 0 0" type="slide" axis="1 0 0" limited='false'/>
-      <joint name="OBJSy" pos="0 0 0" type="slide" axis="0 1 0" limited='false'/>
-      <joint name="OBJSz" pos="0 0 0" type="slide" axis="0 0 1" limited='false'/>
-      <joint name="OBJRx" pos="0 0 0" type="hinge" axis="1 0 0" limited='false'/>
-      <joint name="OBJRy" pos="0 0 0" type="hinge" axis="0 1 0" limited='false'/>
-      <joint name="OBJRz" pos="0 0 0" type="hinge" axis="0 0 1" limited='false'/>
+    <body name='object' pos='0 0 0.0175'>
+      <!-- <geom type="mesh" mesh="eraser_top_half" rgba="1 0.6 0.6 1" solref='0.001 0.0001' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/> -->
+      <!-- <geom type="mesh" mesh="eraser_bottom_half" rgba="1 0.5 0.8 1" solref='0.001 0.0001' friction='1 0.5 0.0001' density='100' contype='1' conaffinity='1'/> -->
+      <!-- <geom type="mesh" mesh="eraser_top_half" rgba="1 0.6 0.6 1" solref='0.001 0.05' friction='1.15 0.5 0.0001' density='100' contype='1' conaffinity='1'/> -->
+      <!-- <geom type="mesh" mesh="eraser_bottom_half" rgba="1 0.5 0.8 1" solref='0.001 0.05' friction='1.15 0.5 0.0001' density='100' contype='1' conaffinity='1'/> -->
+      <geom type="mesh" mesh="eraser_top_half" rgba="1 0.6 0.6 1" friction='0.5 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+      <geom type="mesh" mesh="eraser_bottom_half" rgba="1 0.5 0.8 1" friction='0.5 0.5 0.0001' density='100' contype='1' conaffinity='1'/>
+      <!-- <joint name="OBJSx" pos="0 0 0" type="slide" axis="1 0 0" limited='false'/> -->
+      <!-- <joint name="OBJSy" pos="0 0 0" type="slide" axis="0 1 0" limited='false'/> -->
+      <!-- <joint name="OBJSz" pos="0 0 0" type="slide" axis="0 0 1" limited='false'/> -->
+      <!-- <joint name="OBJRx" pos="0 0 0" type="hinge" axis="1 0 0" limited='false'/> -->
+      <!-- <joint name="OBJRy" pos="0 0 0" type="hinge" axis="0 1 0" limited='false'/> -->
+      <!-- <joint name="OBJRz" pos="0 0 0" type="hinge" axis="0 0 1" limited='false'/> -->
+      <joint name="OBJFree" type="free"/>
     </body>
 
     <body name='target'>
