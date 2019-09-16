@@ -50,11 +50,11 @@
         <site group="3"/>
       </default>
       <default class="phy_metal">
-        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3"/>
+        <geom contype="3" conaffinity="3" group="4" type="mesh" rgba="0.0 0.0 1.0 .3"/>
         <site group="4"/>
       </default>
       <default class="phy_plastic">
-        <geom contype="1" conaffinity="1" group="4" type="mesh" rgba="0.0 0.0 1.0 .3" friction=".2 0.005 0.0001"/>
+        <geom contype="3" conaffinity="3" group="4" type="mesh" rgba="0.0 0.0 1.0 .3" friction=".2 0.005 0.0001"/>
         <site group="4"/>
       </default>
     </default>

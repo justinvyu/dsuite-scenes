@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 The DSuite Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<mujocoinclude name='beads_4'>
+  <worldbody>
+    <body name='abacus' pos='0 0 0.05' >
+      <body name='object_0' pos='-0.0525 0 0'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' contype="1" conaffinity="1"/>
+        <joint name="object_0_slide" type="slide" axis="1 0 0" damping="0.5"/>
+      </body>
+      <body name='object_1' pos='-0.0175 0 0'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' contype="1" conaffinity="1"/>
+        <joint name="object_1_slide" type="slide" axis="1 0 0" damping="0.5"/>
+      </body>
+      <body name='object_2' pos='0.0175 0 0'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' contype="1" conaffinity="1"/>
+        <joint name="object_2_slide" type="slide" axis="1 0 0" damping="0.5"/>
+      </body>
+      <body name='object_3' pos='0.0525 0 0'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' contype="1" conaffinity="1"/>
+        <joint name="object_3_slide" type="slide" axis="1 0 0" damping="0.5"/>
+      </body>
+      <body name='rod' euler='0 1.57 0'>
+        <geom type="cylinder" size="0.004 0.15" rgba='0.8 0.8 0.8 1' group='1' contype="2" conaffinity="2"/>
+        <geom type="box" size="0.01 0.01 0.01" pos='0 0 0.1275' rgba='0.9 0.9 0.9 0.5' group='1' contype="1" conaffinity="1"/>
+        <geom type="box" size="0.01 0.01 0.01" pos='0 0 -0.1275' rgba='0.9 0.9 0.9 0.5' group='1' contype="1" conaffinity="1"/>
+      </body>
+
+      <!-- <body name='bead2' pos='-0.031 0 0'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' /> -->
+      <!--   <joint name="bead2_slide" type="slide" axis="1 0 0"/> -->
+      <!-- </body> -->
+      <!-- <body name='bead3' pos='0.031 0 0'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 1' group='1' /> -->
+      <!--   <joint name="bead3_slide" type="slide" axis="1 0 0"/> -->
+      <!-- </body> -->
+
+    </body>
+
+    <body name='targets' pos='0 0 0.05'>
+      <body name='target_0'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+      </body>
+      <body name='target_1'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+      </body>
+      <body name='target_2'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+      </body>
+      <body name='target_3'>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+      </body>
+    </body>
+
+  </worldbody>
+</mujocoinclude>
