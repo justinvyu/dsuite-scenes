@@ -1,0 +1,54 @@
+<mujocoinclude name='circle_arena' >
+  <body name="circle_arena" pos="0 0 0">
+      <body euler='0 0 0'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 1.57'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 3.14'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 4.71'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 0.785'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 2.36'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 3.93'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 5.50'>
+        <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+      </body>
+      <body euler='0 0 0.392'>
+        <body euler='0 0 0'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 1.57'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 3.14'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 4.71'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 0.785'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 2.36'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 3.93'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+        <body euler='0 0 5.50'>
+          <geom type="box" pos="0.155 0 0.035" size="0.0075 0.0324 0.035" material='light-wood' group='1' density='100'/>
+        </body>
+      </body>
+  </body>
+</mujocoinclude>
