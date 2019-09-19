@@ -17,16 +17,17 @@ limitations under the License. -->
 
 <body name="bowl_arena" pos="0 0 0">
     <body name="walls" pos="0 0 0">
-    <geom type="box" size="0.065 0.0045 0.03" pos="0 0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.065 0.0045 0.03" pos="0 -0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.0045 0.065 0.03" pos="0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.0045 0.065 0.03" pos="-0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.065 0.0045 0.03" pos="0 0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.065 0.0045 0.03" pos="0 -0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.0045 0.065 0.03" pos="0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.0045 0.065 0.03" pos="-0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
     </body>
+
     <body name="walls_rotated" pos="0 0 0" euler="0 0 0.785">
-    <geom type="box" size="0.065 0.0045 0.03" pos="0 0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.065 0.0045 0.03" pos="0 -0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.0045 0.065 0.03" pos="0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
-    <geom type="box" size="0.0045 0.065 0.03" pos="-0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.065 0.0045 0.03" pos="0 0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.065 0.0045 0.03" pos="0 -0.135 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.0045 0.065 0.03" pos="0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
+      <geom type="box" size="0.0045 0.065 0.03" pos="-0.135 0 0.12" euler="0 0 0" material="light-wood" rgba="0 0 0 0" />
     </body>
 
     <body name="first_layer" pos="0 0 0">
