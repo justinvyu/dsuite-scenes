@@ -51,17 +51,30 @@ limitations under the License. -->
 
     <body name='targets' pos='0 0 0.05'>
       <body name='target_0'>
-        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0' group='1' contype="0" conaffinity="0"/>
       </body>
       <body name='target_1'>
-        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0' group='1' contype="0" conaffinity="0"/>
       </body>
       <body name='target_2'>
-        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0' group='1' contype="0" conaffinity="0"/>
       </body>
       <body name='target_3'>
-        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/>
+        <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0' group='1' contype="0" conaffinity="0"/>
       </body>
+
+      <!-- <body name='target_0'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/> -->
+      <!-- </body> -->
+      <!-- <body name='target_1'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/> -->
+      <!-- </body> -->
+      <!-- <body name='target_2'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/> -->
+      <!-- </body> -->
+      <!-- <body name='target_3'> -->
+      <!--   <geom type="sphere" size="0.0175" rgba='0.8 0.1 0.1 0.1' group='1' contype="0" conaffinity="0"/> -->
+      <!-- </body> -->
     </body>
 
   </worldbody>
